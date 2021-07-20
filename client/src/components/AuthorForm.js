@@ -13,11 +13,11 @@ export default (props) => {
     return (
         <form onSubmit={onSubmitHandler}>
             <div>
-                {errors.map((err, index) => <p key={index}>{err}</p>)}
                 <label>Name</label><br/>
                 <input type="text" onChange={(e) => setName(e.target.value)} value={name}/>
             </div>
             <input type="Submit"/>
+            {errors.map((err, index) => <p style={{color: 'red'}} key={index}>*{err}</p>)}
         </form>
     )
 }
